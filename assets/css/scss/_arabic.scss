@@ -1,0 +1,30 @@
+html[lang="ar"] , html[lang="me-AR"] ,html[dir="rtl"] {
+  direction: rtl;
+  .p_contact_form_section .p_form_wrapper form fieldset .field_group .f_icon{
+    border-left: 1px solid #cbcbcb;
+    border-right: 0;
+  }
+  .p_contact_form_section .p_form_wrapper form fieldset .field_group .select_field{
+    border-left: 1px solid #cbcbcb;
+    border-right: 0;
+  }
+  .custom_modal .close_btn{
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .p_banner_ads_strip .know_more img{
+    transform: scaleX(-1);
+  }
+  .p_contact_form_section .p_form_wrapper form fieldset label sup, .p_contact_form_section .p_form_wrapper form fieldset label span{
+    margin-right: 3px;
+    margin-left: 0;
+  }
+  .block-social-links-config .item-list ul li{
+    margin-left: 20px;
+    margin-right: 0;
+  }
+  #block-headersociallinksblock .item-list .h3{
+    margin-left: 10px;
+    // margin-right: 0;
+  }
+}

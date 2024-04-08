@@ -1,0 +1,17 @@
+.p_ready_to_win_promo{
+  width: 100%;
+  // height: 655px;
+  height: auto;
+  @media (max-width:1200px) {
+    // aspect-ratio: 16/8;
+  }
+  picture{
+    width: 100%;
+    height: 100%;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

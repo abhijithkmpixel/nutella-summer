@@ -1,0 +1,20 @@
+@import './base/base';
+
+
+//componentws
+@import './components/promobanner';
+@import './components/ads_strip';
+@import './components/readytowin';
+@import './components/contact_forl';
+@import './components/termsconditions';
+@import './components/nutellacopyright';
+
+
+
+//arabic styles
+@import './arabic';
+#nutella-header .region-header-top{
+  @media (max-width: 768px){
+    padding-bottom: 0;
+  }
+}

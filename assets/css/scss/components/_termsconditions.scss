@@ -1,0 +1,18 @@
+.terms_n_conditions {
+  // width: 100%;
+  margin-bottom: 30px;
+  max-width: calc(100% - 30px);
+  margin: 0 auto 30px;
+  a {
+    background-color: #6c757d;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+    width: 100%;
+  }
+}

@@ -1,0 +1,195 @@
+html {
+  // scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+.cursor_notallowed {
+  cursor: not-allowed !important;
+}
+.p_contact_form_section
+  .p_form_wrapper
+  form
+  fieldset
+  .image_placeholder
+  img[alt] {
+  color: #fff;
+}
+
+* {
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  &,
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+a,
+.btn {
+  transition: 0.5s all ease-in-out;
+}
+
+body {
+  background-color: #fff;
+  // font-family: sans-serif;
+  font-smooth: auto;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Gilroy", sans-serif !important;
+}
+
+* {
+  scrollbar-color: rgba($color: #000000, $alpha: 0.3) transparent;
+  scrollbar-width: thin;
+}
+
+.fluid-container {
+  width: 100%;
+  padding: 0 15px;
+}
+
+.container {
+  padding: 0 15px;
+  margin: auto;
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+  }
+  @media (max-width: 1200px) {
+    max-width: 1140px;
+  }
+  @media (max-width: 992px) {
+    max-width: 960px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 720px;
+  }
+  @media (max-width: 576px) {
+    max-width: 540px;
+  }
+}
+@media (min-width: 576px) {
+  .col-sm-6 {
+    flex: 0 0 auto;
+    width: 50%;
+    margin: auto;
+  }
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Black.woff2") format("woff2"),
+    url("../fonts/Gilroy-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-ExtraBold.woff2") format("woff2"),
+    url("../fonts/Gilroy-ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+//llive demo overwrites
+@media (min-width: 768px) {
+  #nutella-header .region-header-top {
+    height: unset;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 768px) {
+  #nutella-header .region-header-top {
+    padding-bottom: 8px;
+  }
+}
+#block-headersociallinksblock .item-list {
+  display: flex;
+  align-items: center;
+  .h3 {
+    font-size: 18px;
+    margin-right: 10px;
+    font-weight: 600;
+  }
+}
+
+#nutella-embed-copywrite {
+  .block-change-country {
+    display: flex;
+    align-items: center;
+    @media (max-width: 570px) {
+      flex-direction: column;
+    }
+    .contactusBtn a {
+      // height: 3.125em;
+      border-radius: 1.625em;
+      border: solid 1px #ca1d1d;
+      background-color: #e20019;
+      color: #fff;
+      font-size: 1em;
+      display: block;
+      font-weight: bold;
+      line-height: 3em;
+      position: relative;
+      white-space: nowrap;
+      text-align: center;
+    }
+  }
+}
+header {
+  margin-bottom: 10px;
+}
+body {
+  @media (max-width: 570px) {
+    margin-top: 80px !important;
+  }
+}
+#nutella-footer .region-footer {
+  flex-flow: row-reverse;
+}
+.custom_lang_switch_btn {
+  color: #ffffff;
+  border: none;
+  font-size: 17px;
+  background-color: #ff0000 !important;
+  font-weight: 500;
+  margin-right: 12px;
+  line-height: 0.7;
+  padding: 5px 16px;
+  border-radius: 17px;
+  display: block;
+}
+#nutella-header .region-header-top {
+  flex-flow: row-reverse;
+  justify-content: flex-start !important;
+  margin-bottom: 0 !important;
+  @media (max-width: 990px) {
+    margin-bottom: 5px !important;
+  }
+}
+// .main-menu {
+//   @media (max-width: 767px) {
+//     overflow: hidden;
+//   }
+// }
+
+// @media (max-width: 767px) {
+//   .main-menu .m-group .menu--main {
+//     opacity: 0;
+//   }
+//   .menu-opened .main-menu .m-group .menu--main {
+//     opacity: 1;
+//   }
+// }
+.error_msgs h4{
+  font-size: 25px;
+  text-align: center;
+  color: red;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
