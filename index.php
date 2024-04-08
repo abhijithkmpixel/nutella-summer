@@ -2,14 +2,6 @@
 <html lang="en-Me" dir="ltr">
 
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W4FKBL5');</script>
-<!-- End Google Tag Manager -->
-
   <title>Nutella</title>
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
   <link rel="preload" href="https://www.nutella.com/me/en/header-footer.html?callback=localActivationProcessJson" as="script">
@@ -21,23 +13,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 
 <body class="<?php if ($_POST) echo "pe-none opacity-75"; ?>">
-<?php $emailExistTrue = false;?>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4FKBL5"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <?php $emailExistTrue = false; ?>
+
   <?php
   // require('./includes/header.php');
   ?>
-     <header id="nutella-header" class="nutella-embed-container">
-  <div class="container">
-    <div class="main-menu">
-      <div class="region-header-top" id="nutella-embed-header-top"> <a href="ar.php" class="custom_lang_switch_btn">عربي</a></div>
-      <div class="m-group" id="nutella-embed-header"><button class="navToggle"><span></span></button></div>
-      <svg class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none"><path class="shape-overlays__path"></path><path class="shape-overlays__path"></path><path class="shape-overlays__path"></path><path class="shape-overlays__path"></path></svg>
+  <header id="nutella-header" class="nutella-embed-container">
+    <div class="container">
+      <div class="main-menu">
+        <div class="region-header-top" id="nutella-embed-header-top"> <a href="ar.php" class="custom_lang_switch_btn">عربي</a></div>
+        <div class="m-group" id="nutella-embed-header"><button class="navToggle"><span></span></button></div>
+        <svg class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path class="shape-overlays__path"></path>
+          <path class="shape-overlays__path"></path>
+          <path class="shape-overlays__path"></path>
+          <path class="shape-overlays__path"></path>
+        </svg>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
   <!-- // promotion banner -->
   <section class="p_promo_page_main_banner">
     <div class="promotion_banner_img">
@@ -88,16 +82,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </picture>
   </section>
 
-  <section class="p_contact_form_section">
+  <section class="p_contact_form_section" id="registration_form">
     <div class="fluid-container">
       <h3>Enter your details</h3>
       <div class="error_msgs">
         <h4></h4>
-        <?php 
-      if(isset($_POST['submit_btn'])  && (!isset($_POST['firstName']) || !isset($_POST['lastName']) || !isset($_POST['userEmail']) || !isset($_POST['userPhoneNumber'])) ){
-        echo '<h4>Fields cannot be empty.</h4>';
-      }
-      ?>
+        <?php
+        // if (isset($_POST['submit_btn'])  && (!isset($_POST['firstName']) || !isset($_POST['lastName']) || !isset($_POST['userEmail']) || !isset($_POST['userPhoneNumber']))) {
+        //   echo '<h4>Fields cannot be empty.</h4>';
+        // }
+        ?>
       </div>
       <div class="p_form_wrapper">
         <div class="p_language_switcher_btn_wrp">
@@ -114,7 +108,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                 </svg>
               </div>
-              <input type="text" id="firstName" name="firstName" maxlength="50"/>
+              <input type="text" id="firstName" name="firstName" maxlength="50" />
             </div>
           </fieldset>
 
@@ -127,7 +121,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
                 </svg>
               </div>
-              <input type="text" id="lastName" name="lastName"  maxlength="50"/>
+              <input type="text" id="lastName" name="lastName" maxlength="50" />
             </div>
           </fieldset>
 
@@ -139,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
                 </svg>
               </div>
-              <input type="email" id="userEmail" name="userEmail"  maxlength="70"/>
+              <input type="email" id="userEmail" name="userEmail" maxlength="70" />
             </div>
           </fieldset>
 
@@ -382,7 +376,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                 </svg>
               </div>
-              <input type="text" id="shopName" name="shopName"  maxlength="70"/>
+              <input type="text" id="shopName" name="shopName" maxlength="70" />
             </div>
           </fieldset>
 
@@ -415,7 +409,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <!-- <div class="field_group"></div> -->
           </fieldset>
           <fieldset class="w-100 mb-0">
-          <input type="hidden" id="website_required" name="website_required">
+            <input type="hidden" id="website_required" name="website_required">
 
             <!-- <div class="g-recaptcha" data-sitekey="6LfNks4iAAAAABWRGflFQLNfYaiEgFXqO7WH2Tsc"></div> -->
             <!-- <input type="submit" value="Submit form" id="submit_btn" name="submit_btn" class="submit_btn"> -->
@@ -436,6 +430,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   // $dbPassword = '@tlantis_123#';
 
   // $dbName = "atlantis";
+
+  use PHPMailer\PHPMailer\PHPMailer;
+  use PHPMailer\PHPMailer\Exception;
+
+  require 'phpmailer/src/Exception.php';
+  require 'phpmailer/src/PHPMailer.php';
+  require 'phpmailer/src/SMTP.php';
   require('./includes/config.php');
 
 
@@ -456,7 +457,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       $fileSize = $_FILES['uploadImage']['size'];
       $fileErr = $_FILES['uploadImage']['error'];
       $fileType = $_FILES['uploadImage']['type'];
-      if($first == "" || $last == "" || $email == "" || $_POST["userPhoneNumber"] || $country == ""){
+      if ($first == "" || $last == "" || $email == "" || $_POST["userPhoneNumber"] || $country == "") {
         echo '
         <script>
         setTimeout(() => {
@@ -464,11 +465,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           document.querySelector("body").classList.remove("pe-none");
           document.querySelector("body").classList.remove("opacity-75");
         }, 500);
-           if(document.querySelector("html").getAttribute("dir") == "rtl"){
-          document.querySelector(".error_msgs h4").innerText = "FIelds cannot be empty";
-        }else{
-          document.querySelector(".error_msgs h4").innerText = "FIelds cannot be empty";
-        }
+        //    if(document.querySelector("html").getAttribute("dir") == "rtl"){
+        //   document.querySelector(".error_msgs h4").innerText = "FIelds cannot be empty";
+        // }else{
+        //   document.querySelector(".error_msgs h4").innerText = "FIelds cannot be empty";
+        // }
         </script>
         ';
       }
@@ -481,104 +482,141 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
       /** Store the file details in variable */
-$product_invoice    = $_FILES['uploadImage'];
-if($_FILES['uploadImage']['error'] == 0 ){
+      $product_invoice    = $_FILES['uploadImage'];
+      if ($_FILES['uploadImage']['error'] == 0) {
 
-  /** Uploaded file name */
-  $file_name          = $product_invoice['name'];
-  $file_tmp           = $product_invoice['tmp_name'];
-  
-  /** Allowed MIME extensions */
-  $file_extensions    = ['image/jpeg', 'image/pjpeg', 'image/x-png','image/png','image/gif','image/heic','image/heif', 'heic'];
-  
-  /** Using finfo to just get the MIME type */
-  $finfo      = new finfo(FILEINFO_MIME_TYPE);
-  
-  /** You will get extension along with the mime types */
-  $extension  = $finfo->file($file_tmp);
-  
-  /** Check File extensions */
-  if(!in_array($extension, $file_extensions)){
-      $errors[] = 'File allowed extensions '. implode(', ', $file_extensions);
-  
-      echo '<script>
+        /** Uploaded file name */
+        $file_name          = $product_invoice['name'];
+        $file_tmp           = $product_invoice['tmp_name'];
+
+        /** Allowed MIME extensions */
+        $file_extensions    = ['image/jpeg', 'image/pjpeg', 'image/x-png', 'image/png', 'image/gif', 'image/heic', 'image/heif', 'heic'];
+
+        /** Using finfo to just get the MIME type */
+        $finfo      = new finfo(FILEINFO_MIME_TYPE);
+
+        /** You will get extension along with the mime types */
+        $extension  = $finfo->file($file_tmp);
+
+        /** Check File extensions */
+        if (!in_array($extension, $file_extensions)) {
+          $errors[] = 'File allowed extensions ' . implode(', ', $file_extensions);
+
+          echo '<script>
           
-      document.getElementById("firstName").value ="'.$first.'"; 
-      document.getElementById("lastName").value ="'.$last.'"; 
-      document.getElementById("userEmail").value ="'.$email.'"; 
-      document.getElementById("countryCode").value ="'.$_POST["countryCode"].'"; 
-      document.getElementById("userPhoneNumber").value ="'.$_POST["userPhoneNumber"].'"; 
-      document.getElementById("shopName").value ="'.$shopname.'"; 
-      document.getElementById("countryName").value ="'.$country.'"; 
-      setTimeout(() => {
-  
-        document.querySelector("body").classList.remove("pe-none");
-        document.querySelector("body").classList.remove("opacity-75");
-      }, 500);
-         if(document.querySelector("html").getAttribute("dir") == "rtl"){
-        document.querySelector(".error_msgs h4").innerText = "Invalid file type! Please upload an image.";
-      }else{
-        document.querySelector(".error_msgs h4").innerText = "Invalid file type! Please upload an image.";
-      }
-      </script>';
-  }else{
-  
-    if ($fileErr === 0) {
-      if (!file_exists('uploadedimages')) {
-        @mkdir('uploadedimages', 0777);
-      }
-  
-      $checksql = "SELECT first_name FROM $userTableName WHERE email='$email'";
-      $checkExist = mysqli_query($connect, $checksql);
-      $exist = mysqli_num_rows($checkExist);
-  
-      if ($exist != 0) {
-        echo '<script>
-        
-        document.getElementById("firstName").value ="'.$first.'"; 
-        document.getElementById("lastName").value ="'.$last.'"; 
-        document.getElementById("userEmail").value ="'.$email.'"; 
-        document.getElementById("countryCode").value ="'.$_POST["countryCode"].'"; 
-        document.getElementById("userPhoneNumber").value ="'.$_POST["userPhoneNumber"].'"; 
-        document.getElementById("shopName").value ="'.$shopname.'"; 
-        document.getElementById("countryName").value ="'.$country.'"; 
-        setTimeout(() => {
-  
-          document.querySelector("body").classList.remove("pe-none");
-          document.querySelector("body").classList.remove("opacity-75");
-        }, 500);
-        if(document.querySelector("html").getAttribute("dir") == "ltr"){
-          document.querySelector(".error_msgs h4").innerText = "Email already exist!";
-        }else{
-          document.querySelector(".error_msgs h4").innerText = "البريد الإلكتروني موجود بالفعل";
-        }
+          document.getElementById("firstName").value ="' . $first . '"; 
+          document.getElementById("lastName").value ="' . $last . '"; 
+          document.getElementById("userEmail").value ="' . $email . '"; 
+          document.getElementById("countryCode").value ="' . $_POST["countryCode"] . '"; 
+          document.getElementById("userPhoneNumber").value ="' . $_POST["userPhoneNumber"] . '"; 
+          document.getElementById("shopName").value ="' . $shopname . '"; 
+          document.getElementById("countryName").value ="' . $country . '"; 
+          setTimeout(() => {
       
-        </script>';
-        $emailExistTrue = true;
-      } else {
-        move_uploaded_file($fileTmpName, $dest);
-  
-        if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
-  
-          $link = "https";
+            document.querySelector("body").classList.remove("pe-none");
+            document.querySelector("body").classList.remove("opacity-75");
+          }, 500);
+            if(document.querySelector("html").getAttribute("dir") == "rtl"){
+            document.querySelector(".error_msgs h4").innerText = "Invalid file type! Please upload an image.";
+          }else{
+            document.querySelector(".error_msgs h4").innerText = "Invalid file type! Please upload an image.";
+          }
+          </script>';
         } else {
-          $link = "http";
+
+          if ($fileErr === 0) {
+            if (!file_exists('uploadedimages')) {
+              @mkdir('uploadedimages', 0777);
+            }
+
+            $checksql = "SELECT first_name FROM $userTableName WHERE email='$email'";
+            $checkExist = mysqli_query($connect, $checksql);
+            $exist = mysqli_num_rows($checkExist);
+
+            if ($exist != 0) {
+              echo '<script>
+        
+                  document.getElementById("firstName").value ="' . $first . '"; 
+                  document.getElementById("lastName").value ="' . $last . '"; 
+                  document.getElementById("userEmail").value ="' . $email . '"; 
+                  document.getElementById("countryCode").value ="' . $_POST["countryCode"] . '"; 
+                  document.getElementById("userPhoneNumber").value ="' . $_POST["userPhoneNumber"] . '"; 
+                  document.getElementById("shopName").value ="' . $shopname . '"; 
+                  document.getElementById("countryName").value ="' . $country . '"; 
+                  setTimeout(() => {
+            
+                    document.querySelector("body").classList.remove("pe-none");
+                    document.querySelector("body").classList.remove("opacity-75");
+                  }, 500);
+                  if(document.querySelector("html").getAttribute("dir") == "ltr"){
+                    document.querySelector(".error_msgs h4").innerText = "Email already exist!";
+                  }else{
+                    document.querySelector(".error_msgs h4").innerText = "البريد الإلكتروني موجود بالفعل";
+                  }
+                
+                  </script>';
+              $emailExistTrue = true;
+            } else {
+              move_uploaded_file($fileTmpName, $dest);
+
+              if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+
+                $link = "https";
+              } else {
+                $link = "http";
+              }
+              $link .= "://";
+              $link .= $_SERVER['HTTP_HOST'];
+              $link .= $_SERVER['REQUEST_URI'];
+              $dirPath = dirname($link);
+
+
+              $imagePath = $dirPath . '/uploadedimages/' . $fileNewName;
+              $sql = "INSERT INTO $userTableName (	first_name,	last_name ,email,phone,shop_name,country,image_url) VALUES ('$first','$last','$email','$phno','$shopname','$country','$imagePath');";
+
+              $postData = mysqli_query($connect, $sql);
+              // echo '<script>window.location.href = "success.php"</script>';
+
+              $mail = new PHPMailer(true);
+              $mail->isSMTP();
+              $mail->Host = 'smtp.gmail.com';
+              $mail->SMTPAuth = true;
+              $mail->Username = 'pixelflames.developer@gmail.com';
+              $mail->Password = 'qptfscnvaxqyiywc';
+              $mail->SMTPSecure = 'ssl';
+              $mail->Port = 465;
+
+              $mail->setFrom('pixelflames.developer@gmail.com');
+
+              $mail->addAddress('abhijith@pixelflames.com');
+
+              $mail->isHTML(true);
+              $mail->Subject = 'Nutella.';
+              $mail->Body = 'Name:' . $first . '  <br> ';
+              $mail->Body .= 'Email:' . $email . '  <br> ';
+              $mail->Body .= 'Phone:' . $phno . '<br>   ';
+              // $mail->Body .= 'Message:' . $_POST["comments"] . '';
+              try {
+                $mail->send();
+              } catch (Exception $e) {
+                echo $e->getMessage();
+                exit(); //Boring error messages from anything else!
+              }
+
+              echo "<script>
+                  var element = document.getElementById('registration_form');
+
+                  var offsetTop = element.offsetTop;
+
+                  window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth' 
+                  });
+              </script>";
+            }
+          }
         }
-        $link .= "://";
-        $link .= $_SERVER['HTTP_HOST'];
-        $link .= $_SERVER['REQUEST_URI'];
-        $dirPath = dirname($link);
-  
-  
-        $imagePath = $dirPath . '/uploadedimages/' . $fileNewName;
-        $sql = "INSERT INTO $userTableName (	first_name,	last_name ,email,phone,shop_name,country,image_url) VALUES ('$first','$last','$email','$phno','$shopname','$country','$imagePath');";
-  
-        $postData = mysqli_query($connect, $sql);
-        echo '<script>window.location.href = "success.php"</script>';
       }
-    }
-  }
-}
     }
   }
   function input_cleaner($input)
