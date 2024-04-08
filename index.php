@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="./assets/css/app.min.css" />
 </head>
 
-<body class="<?php if ($_POST) echo "pe-none opacity-75"; ?>">
+<body class="<?php if ($_POST) echo "pe-none opacity-50"; ?>">
   <?php $emailExistTrue = false; ?>
 
   <?php
@@ -32,6 +32,8 @@
       </div>
     </div>
   </header>
+
+  <div class="fixed__loading_text">Please wait!</div>
   <!-- // promotion banner -->
   <section class="p_promo_page_main_banner">
     <div class="promotion_banner_img">
@@ -463,7 +465,7 @@
         setTimeout(() => {
 
           document.querySelector("body").classList.remove("pe-none");
-          document.querySelector("body").classList.remove("opacity-75");
+          document.querySelector("body").classList.remove("opacity-50");
         }, 500);
         //    if(document.querySelector("html").getAttribute("dir") == "rtl"){
         //   document.querySelector(".error_msgs h4").innerText = "FIelds cannot be empty";
@@ -514,7 +516,7 @@
           setTimeout(() => {
       
             document.querySelector("body").classList.remove("pe-none");
-            document.querySelector("body").classList.remove("opacity-75");
+            document.querySelector("body").classList.remove("opacity--50");
           }, 500);
             if(document.querySelector("html").getAttribute("dir") == "rtl"){
             document.querySelector(".error_msgs h4").innerText = "Invalid file type! Please upload an image.";
@@ -546,7 +548,7 @@
                   setTimeout(() => {
             
                     document.querySelector("body").classList.remove("pe-none");
-                    document.querySelector("body").classList.remove("opacity-75");
+                    document.querySelector("body").classList.remove("opacity-50");
                   }, 500);
                   if(document.querySelector("html").getAttribute("dir") == "ltr"){
                     document.querySelector(".error_msgs h4").innerText = "Email already exist!";
@@ -588,7 +590,7 @@
 
               $mail->setFrom('pixelflames.developer@gmail.com');
 
-              $mail->addAddress('abhijith@pixelflames.com');
+              $mail->addAddress($email);
 
               $mail->isHTML(true);
               $mail->Subject = 'Nutella.';
