@@ -1,3 +1,5 @@
+gsap.registerPlugin(ScrollTrigger);
+
 jQuery.validator.addMethod("mobilefield", function (value, element) {
   return this.optional(element) || /^([0-9-+]{7,11})$/i.test(value);
 });
@@ -93,7 +95,7 @@ jQuery("#registrationform").validate({
     },
   },
   submitHandler: function (form) {
-  
+
     jQuery("#emailValidError").remove();
     jQuery("fieldset").removeClass("error");
     jQuery("#emailValidError").closest("fieldset").removeClass("error_border");
@@ -142,12 +144,12 @@ jQuery("#registrationform").validate({
         return false;
       } else if ($("#website_required").val() != "" && imageValid == true) {
         emailValid = true;
-          $("body").addClass("pe-none opacity-75 ");
-          return true;
+        $("body").addClass("pe-none opacity-75 ");
+        return true;
       }
     };
 
-   return true;
+    return true;
   },
 });
 
@@ -238,7 +240,7 @@ $("#uploadImage").change(function (event) {
           var url = window.URL || window.webkitURL;
           var image = new Image();
           if (file.size < 2000000) {
-  
+
             $("#submit_btn").attr("disabled", false);
             $("#submit_btn").removeClass("opacity-75 cursor_notallowed");
             imageValid = true;
@@ -302,6 +304,70 @@ $("#uploadImage").change(function (event) {
 //   $("body").addClass("overflow_hidden");
 // });
 
+$("#scrolltoform").click(function () {
+  $([document.documentElement, document.body]).animate({
+    scrollTop: $("#registration_form").offset().top
+  }, 1000);
+});
+
+gsap.to('.parallax__image__block picture img', {
+  objectPosition: "100% 90%",
+  ease: "power1.inOut",
+  scrollTrigger: {
+    trigger:
+      ".parallax__image__block",
+    start: "0% 100%",
+    end: "100% 0%",
+    scrub: 0.3,
+  },
+})
+if (window.innerWidth > 1200) {
+  gsap.to('.side_grid_item1', {
+    y: -100,
+    ease: "power1.inOut",
+    scrollTrigger: {
+      trigger:
+        ".promotion_banner_img",
+      start: "0% 40%",
+      end: "100% 30%",
+      scrub: 0.3,
+    },
+  })
+
+  gsap.to('.side_grid_item2', {
+    y: -120,
+    ease: "power1.inOut",
+    scrollTrigger: {
+      trigger:
+        ".promotion_banner_img",
+      start: "0% 40%",
+      end: "100% 30%",
+      scrub: 0.3,
+    },
+  })
+  gsap.to('.side_grid_item3', {
+    y: -60,
+    ease: "power1.inOut",
+    scrollTrigger: {
+      trigger:
+        ".promotion_banner_img",
+      start: "0% 40%",
+      end: "100% 30%",
+      scrub: 0.3,
+    },
+  })
+  gsap.to('.side_grid_item4', {
+    y: -100,
+    ease: "power1.inOut",
+    scrollTrigger: {
+      trigger:
+        ".promotion_banner_img",
+      start: "0% 40%",
+      end: "100% 30%",
+      scrub: 0.3,
+    },
+  })
+}
 $(".custom_modal .close_btn").click(function () {
   $("#knowMore").toggleClass("v_hidden");
   $("body").removeClass("overflow_hidden");

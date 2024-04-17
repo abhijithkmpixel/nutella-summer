@@ -128,3 +128,19 @@
 .overflow_hidden {
   overflow: hidden;
 }
+/** @format */
+
+.parallax__image__block {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1920/290;
+  picture {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
