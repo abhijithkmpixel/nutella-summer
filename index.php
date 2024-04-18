@@ -183,8 +183,8 @@
       $first = mysqli_real_escape_string($connect, input_cleaner(($_POST["firstName"])));
       $last = mysqli_real_escape_string($connect, input_cleaner(($_POST["lastName"])));
       $email = mysqli_real_escape_string($connect, input_cleaner(($_POST["userEmail"])));
-      $number = ($_POST["countryCode"] . $_POST["userPhoneNumber"]);
-      $phno = mysqli_real_escape_string($connect, input_cleaner($number));
+      // $number = ($_POST["countryCode"] . $_POST["userPhoneNumber"]);
+      $phno = mysqli_real_escape_string($connect, input_cleaner(($_POST["userPhoneNumber"])));
       $shopname = mysqli_real_escape_string($connect, input_cleaner(($_POST["shopName"])));
       $country = mysqli_real_escape_string($connect, input_cleaner(($_POST["countryName"])));
       $file = $_FILES['uploadImage'];
@@ -193,22 +193,22 @@
       $fileSize = $_FILES['uploadImage']['size'];
       $fileErr = $_FILES['uploadImage']['error'];
       $fileType = $_FILES['uploadImage']['type'];
-      if ($first == "" || $last == "" || $email == "" || $_POST["userPhoneNumber"] || $country == "") {
-        echo '
-        <script>
-        setTimeout(() => {
+      // if ($first == "" || $last == "" || $email == "" || $_POST["userPhoneNumber"] || $country == "") {
+      //   echo '
+      //   <script>
+      //   setTimeout(() => {
 
-          document.querySelector("body").classList.remove("pe-none");
-          document.querySelector("body").classList.remove("opacity-50");
-        }, 500);
-        //    if(document.querySelector("html").getAttribute("dir") == "rtl"){
-        //   document.querySelector(".error_msgs h4").innerText = "FIelds cannot be empty";
-        // }else{
-        //   document.querySelector(".error_msgs h4").innerText = "FIelds cannot be empty";
-        // }
-        </script>
-        ';
-      }
+      //     document.querySelector("body").classList.remove("pe-none");
+      //     document.querySelector("body").classList.remove("opacity-50");
+      //   }, 1000);
+      //   //    if(document.querySelector("html").getAttribute("dir") == "rtl"){
+      //   //   document.querySelector(".error_msgs h4").innerText = "FIelds cannot be empty";
+      //   // }else{
+      //   //   document.querySelector(".error_msgs h4").innerText = "FIelds cannot be empty";
+      //   // }
+      //   </script>
+      //   ';
+      // }
 
       $fileExt = explode('.', $fileName);
       $fileActExt = strtolower(end($fileExt));
@@ -243,7 +243,6 @@
           document.getElementById("firstName").value ="' . $first . '"; 
           document.getElementById("lastName").value ="' . $last . '"; 
           document.getElementById("userEmail").value ="' . $email . '"; 
-          document.getElementById("countryCode").value ="' . $_POST["countryCode"] . '"; 
           document.getElementById("userPhoneNumber").value ="' . $_POST["userPhoneNumber"] . '"; 
           document.getElementById("shopName").value ="' . $shopname . '"; 
           document.getElementById("countryName").value ="' . $country . '"; 
@@ -275,7 +274,6 @@
                   document.getElementById("firstName").value ="' . $first . '"; 
                   document.getElementById("lastName").value ="' . $last . '"; 
                   document.getElementById("userEmail").value ="' . $email . '"; 
-                  document.getElementById("countryCode").value ="' . $_POST["countryCode"] . '"; 
                   document.getElementById("userPhoneNumber").value ="' . $_POST["userPhoneNumber"] . '"; 
                   document.getElementById("shopName").value ="' . $shopname . '"; 
                   document.getElementById("countryName").value ="' . $country . '"; 
@@ -289,6 +287,14 @@
                   }else{
                     document.querySelector(".error_msgs h4").innerText = "البريد الإلكتروني موجود بالفعل";
                   }
+                     var element = document.getElementById("registration_form");
+
+                  var offsetTop = element.offsetTop;
+
+                  window.scrollTo({
+                    top: offsetTop,
+                    // behavior: "smooth"
+                  });
                 
                   </script>';
               $emailExistTrue = true;
@@ -339,16 +345,35 @@
                 exit(); //Boring error messages from anything else!
               }
 
-              echo "<script>
+              echo "
+              
+                  <div class='success_overlay' id='success_overlay'></div>
+                        <div class='success__popup' id='success__popup'>
+                          <button class='success__popup__close__btn' id='close__popupbtn'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-x-lg' viewBox='0 0 16 16'>
+                              <path d='M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z' />
+                            </svg></button>
+                          <h4>Thank you </h4>
+                          <p>for participating in the 'Nutella' promotion. Please check your inbox for more details.</p>
+                        </div>
+              <script>
                   var element = document.getElementById('registration_form');
 
                   var offsetTop = element.offsetTop;
 
                   window.scrollTo({
                     top: offsetTop,
-                    behavior: 'smooth' 
+                    // behavior: 'smooth' 
                   });
-              </script>";
+                   document.querySelector('body').classList.remove('pe-none');
+                    document.querySelector('body').classList.remove('opacity-50');
+                    document.querySelector('#close__popupbtn').addEventListener('click',function(){
+                      var success_overlay = document.getElementById('success_overlay');
+                      var success__popup = document.getElementById('success__popup');
+                      success_overlay.parentNode.removeChild(success_overlay);
+                      success__popup.parentNode.removeChild(success__popup);
+                    })
+              </script>
+              ";
             }
           }
         }

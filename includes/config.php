@@ -18,4 +18,5 @@ $dbName = "nutella";
 
 
 $userTableName= "nutella_atlantis_campaign";
+
 // $priceTableName="prices";
