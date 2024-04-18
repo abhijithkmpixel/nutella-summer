@@ -73,6 +73,7 @@
   <section class="p_contact_form_section" id="registration_form">
     <div class="fluid-container">
       <h3>Enter your details</h3>
+      <div class="btn__wrapper"><a href="/index.php" class="active">English</a><a href="/ar.php">العربية</a></div>
       <div class="error_msgs">
         <h4></h4>
         <?php
@@ -314,7 +315,7 @@
 
 
               $imagePath = $dirPath . '/uploadedimages/' . $fileNewName;
-              $sql = "INSERT INTO $userTableName (	first_name,	last_name ,email,phone,shop_name,country,image_url) VALUES ('$first','$last','$email','$phno','$shopname','$country','$imagePath');";
+              $sql = "INSERT INTO $userTableName (	first_name,	last_name ,email,phone,shop_name,country,image_url,lang) VALUES ('$first','$last','$email','$phno','$shopname','$country','$imagePath','en');";
 
               $postData = mysqli_query($connect, $sql);
               // echo '<script>window.location.href = "success.php"</script>';
@@ -352,8 +353,11 @@
                           <button class='success__popup__close__btn' id='close__popupbtn'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-x-lg' viewBox='0 0 16 16'>
                               <path d='M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z' />
                             </svg></button>
-                          <h4>Thank you </h4>
-                          <p>for participating in the 'Nutella' promotion. Please check your inbox for more details.</p>
+                           <picture>
+                            <source media='(max-width:990px)' srcset='./uploads/mobile.png'>
+                            <source srcset='./uploads/desk.png' />
+                            <img src='./uploads/desk.png' alt='image' />
+                          </picture>
                         </div>
               <script>
                   var element = document.getElementById('registration_form');
@@ -394,6 +398,7 @@
   <?php
   require("./includes/footer.php");
   ?>
+
   <script src="./assets/js/jquery.min.js"></script>
   <script src="./assets/js/validate.min.js"></script>
   <script src="./assets/js/heic2any.min.js"></script>
