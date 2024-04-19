@@ -206,10 +206,13 @@ header {
   background-color: #ff0000 !important;
   font-weight: 500;
   margin-right: 12px;
-  line-height: 0.7;
+  line-height: .7;
   padding: 5px 16px;
   border-radius: 17px;
   display: block;
+}
+html[dir="rtl"] .custom_lang_switch_btn {
+  line-height: 1;
 }
 
 #nutella-header .region-header-top {
@@ -277,11 +280,13 @@ header {
   padding: 10px 25px 14px;
   border-radius: 30px;
   background-color: #ec1f28;
+  text-align: center;
   color: #fff;
   font-weight: 700;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.26);
   text-transform: uppercase;
   text-decoration: none;
+  vertical-align: middle;
 }
 .p_promo_page_main_banner .sidejar {
   position: absolute;
@@ -768,8 +773,10 @@ header {
 .p_contact_form_section .p_form_wrapper form fieldset .field_group select {
   flex: 100%;
   border: 0;
+  max-width: 100%;
   outline: 0;
   padding: 15px 25px;
+  background-color: transparent !important;
   font-size: 18px;
   font-weight: 400;
   color: #212529;
@@ -847,7 +854,7 @@ header {
   border-bottom: 1px solid #000;
   transform: rotate(45deg) translateY(-50%);
   position: absolute;
-  top: 50%;
+  top: 44%;
   right: 30px;
   pointer-events: none;
   z-index: 5;
@@ -930,6 +937,7 @@ header {
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
+  vertical-align: middle;
 }
 .p_contact_form_section .p_form_wrapper form .submit_btn img {
   width: 17px;
@@ -1299,15 +1307,16 @@ html[dir="rtl"] #block-headersociallinksblock .item-list .h3 {
     width: 55vw;
   }
   .p_promo_page_main_banner .float__btn {
-    width: min-content;
+    width: 78px;
     aspect-ratio: 1/1;
     padding: 20px;
     top: 67vw;
+    min-width: min-content;
     left: 65vw;
     bottom: auto;
     border: 2px solid #fff;
     border-radius: 50%;
-    font-size: 3vw;
+    font-size: 13px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1371,6 +1380,7 @@ html[dir="rtl"] #block-headersociallinksblock .item-list .h3 {
   object-fit: contain;
   fill: #fff;
   stroke: #fff;
+  stroke-width: 3px;
 }
 .success__popup p {
   font-size: 16px;
@@ -1388,7 +1398,7 @@ html[dir="rtl"] #block-headersociallinksblock .item-list .h3 {
   position: absolute;
   top: 20px;
   cursor: pointer;
-  right: 25px;
+  right: 30px;
   border: 0;
   /* transform: translate(-50%, 50%); */
   width: 35px;
@@ -1399,7 +1409,7 @@ html[dir="rtl"] #block-headersociallinksblock .item-list .h3 {
   padding: 8px;
 }
 .success__popup img {
-  width: calc(100vw - 200px);
+  width: calc(100vw - 300px);
   max-height: calc(100vh);
   height: auto;
   object-fit: contain;
@@ -1424,7 +1434,8 @@ html[dir="rtl"] #block-headersociallinksblock .item-list .h3 {
   border-color: #e20019;
 }
 .btn__wrapper a:nth-child(2) {
-  font-size: 18px;
+  font-size: 17px;
+  border-left: 0;
   border-radius: 0 20px 20px 0;
 }
 .btn__wrapper a:nth-child(1) {
@@ -1434,6 +1445,7 @@ html[dir="rtl"] #block-headersociallinksblock .item-list .h3 {
   font-size: 20px;
   color: #000;
   font-weight: 600;
+  height: 44px;
   text-decoration: none;
   width: 50%;
   display: block;
@@ -1462,16 +1474,20 @@ html[dir="rtl"] #block-headersociallinksblock .item-list .h3 {
   .btn__wrapper a:nth-child(2) {
     font-size: 16px;
   }
+  html[dir="rtl"] .p_contact_form_section .p_form_wrapper form .submit_btn {
+    font-size: 18px;
+  }
 }
 html[dir="rtl"] .btn__wrapper a:nth-child(1) {
   border-radius: 0 20px 20px 0;
+  border-left: 0;
 }
 html[dir="rtl"] .btn__wrapper a:nth-child(2) {
   border-radius: 20px 0 0 20px;
 }
 html[dir="rtl"] .success__popup .success__popup__close__btn {
   right: auto;
-  left: 25px;
+  left: 30px;
 }
 @media (max-width: 990px) {
   .success__popup img {
@@ -1490,7 +1506,30 @@ html[dir="rtl"] .success__popup .success__popup__close__btn {
     right: 15px;
   }
   html[dir="rtl"] .success__popup .success__popup__close__btn {
-  right: auto;
-  left: 15px;
+    right: auto;
+    left: 15px;
+  }
+  .p_promo_page_main_banner .side_grid .side_grid_item1 {
+    width: calc(50% + 5px);
+    margin-right: -5px;
+    flex: 0 0 calc(50% + 5px);
+  }
+  .p_promo_page_main_banner .side_grid .side_grid_item2 {
+    width: calc(50% + 8px);
+    margin-right: -8px;
+    flex: 0 0 calc(50% + 8px);
+  }
 }
+html[dir="rtl"] .select__field::after {
+  left: 30px;
+  right: auto;
+}
+html[dir="rtl"]
+  .p_contact_form_section
+  .p_form_wrapper
+  form
+  fieldset
+  .field_group
+  select {
+  text-align: right;
 }

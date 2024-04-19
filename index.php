@@ -9,6 +9,8 @@
   <?php
   require("./includes/head.php");
   ?>
+  <link rel="preload" href="./uploads/desk.png" as="image">
+  <link rel="preload" href="../uploads/mobile.png" as="image">
   <link rel="stylesheet" href="./assets/css/app.css" />
 </head>
 
@@ -65,15 +67,15 @@
   <section class="p_ready_to_win_promo">
     <picture>
       <!-- <source media="(min-width:650px)" srcset="img_pink_flowers.jpg"> -->
-      <source srcset="./uploads/how-to-participate.jpg" />
-      <img src="./uploads/how-to-participate.jpg" alt="image" />
+      <source srcset="./uploads/how-to-participate.webp" />
+      <img src="./uploads/how-to-participate.webp" alt="image" />
     </picture>
   </section>
 
   <section class="p_contact_form_section" id="registration_form">
     <div class="fluid-container">
       <h3>Enter your details</h3>
-      <div class="btn__wrapper"><a href="/index.php" class="active">English</a><a href="/ar.php">العربية</a></div>
+      <div class="btn__wrapper"><a href="index.php" class="active">English</a><a href="ar.php">العربية</a></div>
       <div class="error_msgs">
         <h4></h4>
         <?php
@@ -113,7 +115,7 @@
             <fieldset class="w-50">
               <label for="userPhoneNumber">Phone Number<span>*</span></label>
               <div class="field_group sm-wrap">
-                <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" id="userPhoneNumber" maxlength="11" name="userPhoneNumber" />
+                <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" id="userPhoneNumber" maxlength="14" name="userPhoneNumber" />
               </div>
             </fieldset>
 
@@ -393,7 +395,6 @@
     return $input;
   }
   ?>
-
 
   <?php
   require("./includes/footer.php");

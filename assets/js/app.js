@@ -1,7 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
 jQuery.validator.addMethod("mobilefield", function (value, element) {
-  return this.optional(element) || /^([0-9-+]{7,11})$/i.test(value);
+  return this.optional(element) || /^([0-9-+]{7,14})$/i.test(value);
 });
 jQuery.validator.addMethod("emailfield", function (value, element) {
   return (
@@ -310,17 +310,17 @@ $("#scrolltoform").click(function () {
   }, 1000);
 });
 
-// gsap.to('.parallax__image__block picture img', {
-//   objectPosition: "100% 90%",
-//   ease: "power1.inOut",
-//   scrollTrigger: {
-//     trigger:
-//       ".parallax__image__block",
-//     start: "0% 100%",
-//     end: "100% 0%",
-//     scrub: .8,
-//   },
-// })
+gsap.to('.parallax__image__block picture img', {
+  objectPosition: "100% 90%",
+  ease: "power1.inOut",
+  scrollTrigger: {
+    trigger:
+      ".parallax__image__block",
+    start: "0% 100%",
+    end: "100% 0%",
+    scrub: .8,
+  },
+})
 if (window.innerWidth > 1200) {
   gsap.to('.side_grid_item1', {
     y: -100,

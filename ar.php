@@ -4,11 +4,13 @@
 <head>
     <title>Nutella</title>
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
-    <link rel="preload" href="https://www.nutella.com/me/en/header-footer.html?callback=localActivationProcessJson" as="script">
+    <link rel="preload" href="https://www.nutella.com/me/ar/header-footer.html?callback=localActivationProcessJson" as="script">
 
     <?php
     require("./includes/head.php");
     ?>
+    <link rel="preload" href="./uploads/desk.png" as="image">
+    <link rel="preload" href="../uploads/mobile.png" as="image">
     <link rel="stylesheet" href="./assets/css/app.css" />
 </head>
 
@@ -21,7 +23,7 @@
     <header id="nutella-header" class="nutella-embed-container">
         <div class="container">
             <div class="main-menu">
-                <div class="region-header-top" id="nutella-embed-header-top"> <a href="ar.php" class="custom_lang_switch_btn">عربي</a></div>
+                <div class="region-header-top" id="nutella-embed-header-top"> <a href="index.php" class="custom_lang_switch_btn">English</a></div>
                 <div class="m-group" id="nutella-embed-header"><button class="navToggle"><span></span></button></div>
                 <svg class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
                     <path class="shape-overlays__path"></path>
@@ -65,15 +67,15 @@
     <section class="p_ready_to_win_promo">
         <picture>
             <!-- <source media="(min-width:650px)" srcset="img_pink_flowers.jpg"> -->
-            <source srcset="./uploads/how-to-participate.jpg" />
-            <img src="./uploads/how-to-participate.jpg" alt="image" />
+            <source srcset="./uploads/how-to-participate.webp" />
+            <img src="./uploads/how-to-participate.webp" alt="image" />
         </picture>
     </section>
 
     <section class="p_contact_form_section" id="registration_form">
         <div class="fluid-container">
             <h3>سجل بياناتك</h3>
-            <div class="btn__wrapper"><a href="/index.php">English</a><a href="/ar.php" class="active">العربية</a></div>
+            <div class="btn__wrapper"><a href="index.php">English</a><a href="ar.php" class="active">العربية</a></div>
             <div class="error_msgs">
                 <h4></h4>
                 <?php
@@ -113,7 +115,7 @@
                         <fieldset class="w-50">
                             <label for="userPhoneNumber">رقم الهاتف<span>*</span></label>
                             <div class="field_group sm-wrap">
-                                <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" id="userPhoneNumber" maxlength="11" name="userPhoneNumber" />
+                                <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" id="userPhoneNumber" maxlength="14" name="userPhoneNumber" />
                             </div>
                         </fieldset>
 
@@ -405,12 +407,14 @@
     <script src="./assets/js/scrollTrigger.min.js"></script>
     <script src="./assets/js/app.js"></script>
 
-    <script src="https://www.nutella.com/me/en/header-footer.js"></script>
+    <script src="https://www.nutella.com/me/ar/header-footer.js"></script>
+
 
     <?php
     require("./includes/scripts.php");
     ?>
-    <script type="application/javascript" src="https://www.nutella.com/me/en/header-footer.html?callback=localActivationProcessJson"></script>
+    <script type="application/javascript" src="https://www.nutella.com/me/ar/header-footer.html?callback=localActivationProcessJson"></script>
+
     <script src="./assets/js/header-footer.js"></script>
 
 </body>
